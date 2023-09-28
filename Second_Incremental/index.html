@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Second Incremental</title>
+</head>
+<body>
+ <div id="app">
+  <div class="currency-container">
+	<div class="marketing-currency">
+		You have ${{player.money}}
+	</div>
+	<div class="artists-currency">
+
+	</div>
+	<div class="lootBoxTeam-currency">
+
+	</div>
+  </div>
+  
+  <div class="producers-container">
+	<div class="generators-container">
+		<div class="generator marketing-generator" v-for="(marketing, idx) in player.marketing">
+			<h4>{{ marketing.name }}</h4>
+			<span class="generator-amount">{{ marketing.amount }}</span>
+			<span class="generator-multiplier">x{{ marketing.mult }}</span>
+			<span class="generator-cost">Cost: {{ marketing.cost }}</span>
+			<button @click="buyMarketingGenerator(idx)">Buy 1</button>
+		</div>	
+	</div>
+	<div class="generators-container">
+
+	</div>
+	<div class="generators-container">
+
+	</div>
+  </div>
+ </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/player.js"></script>
+<script src="js/loop.js"></script>
+<script src="js/index.js"></script>
+</html>
