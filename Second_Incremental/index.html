@@ -9,7 +9,7 @@
  <div id="app">
   <div class="currency-container">
 	<div class="marketing-currency">
-		You have ${{player.money}}
+		You have ${{ format(player.money) }}
 	</div>
 	<div class="artists-currency">
 
@@ -23,23 +23,36 @@
 	<div class="generators-container">
 		<div class="generator marketing-generator" v-for="(marketing, idx) in player.marketing">
 			<h4>{{ marketing.name }}</h4>
-			<span class="generator-amount">{{ marketing.amount }}</span>
-			<span class="generator-multiplier">x{{ marketing.mult }}</span>
-			<span class="generator-cost">Cost: {{ marketing.cost }}</span>
+			<span class="generator-amount">{{ format(marketing.amount) }}</span>
+			<span class="generator-multiplier">x{{ format(marketing.mult) }}</span>
+			<span class="generator-cost">Cost: {{ format(marketing.cost) }}</span>
 			<button @click="buyMarketingGenerator(idx)">Buy 1</button>
 		</div>	
 	</div>
 	<div class="generators-container">
-
+		<div class="generator artist-generator" v-for="(artist, idx) in player.artists">
+			<h4>{{ artists.name }}</h4>
+			<span class="generator-amount">{{ format(artists.amount) }}</span>
+			<span class="generator-multiplier">x{{ format(artists.mult) }}</span>
+			<span class="generator-cost">Cost: {{ format(artists.cost) }}</span>
+			<button @click="buyArtistGenerator(idx)">Buy 1</button>
+		</div>	
 	</div>
 	<div class="generators-container">
-
+		<div class="generator lootBoxTeam-generator" v-for="(lootBoxTeam, idx) in player.lootBoxTeam">
+			<h4>{{ lootBoxTeam.name }}</h4>
+			<span class="generator-amount">{{ format(lootBoxTeam.amount) }}</span>
+			<span class="generator-multiplier">x{{ format(lootBoxTeam.mult) }}</span>
+			<span class="generator-cost">Cost: {{ format(lootBoxTeam.cost) }}</span>
+			<button @click="buyLootBoxTeamGenerator(idx)">Buy 1</button>
+		</div>	
 	</div>
   </div>
  </div>
 </body>
 <script src="js/vue.js"></script>
 <script src="js/player.js"></script>
+<script src="js/format.js"></script>
 <script src="js/loop.js"></script>
 <script src="js/index.js"></script>
 </html>

@@ -3,8 +3,9 @@ var player =
 	money: 10,
 	graphics: 0,
 	marketing: [],
-	artist: [],
+	artists: [],
 	lootBoxTeam: [],
+	lastUpdate: Date.now()
 }
 
 var firstMarketing = 
