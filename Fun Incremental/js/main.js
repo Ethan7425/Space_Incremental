@@ -2,10 +2,13 @@ var money = 10
 var generators = []
 var lastUpdate = Date.now()
 
+
+
 for(let i = 0; i < 10; i++)
 {
 	let generator = 
 	{
+		genName: i,
 		cost: Math.pow(Math.pow(10, i), i) * 10,
 		bought: 0,
 		amount: 0,
@@ -31,7 +34,7 @@ function updateGUI()
 	for(let i = 0; i < 10; i++)
 	{
 		let g = generators[i]
-		document.getElementById("gen" + (i + 1)).innerHTML = "Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.multiplier) + "x<br>Cost: " + format(g.cost)
+		document.getElementById("gen" + (i + 1)).innerHTML = "<br>Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.multiplier) + "x<br>Cost: " + format(g.cost)
 		if (g.cost >  money) document.getElementById("gen" + (i + 1)).classList.add("locked")
 		else document.getElementById("gen" + (i + 1)).classList.remove("locked") 
 	}
