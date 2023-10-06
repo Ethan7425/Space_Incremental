@@ -19,15 +19,28 @@ function changeScene(sceneId)
 }
 
 
-var header = document. getElementById("buttonContainer");
-var buttons = header. getElementsByClassName ("button");
-for (var i = 0; i < buttons.length; i++) 
-{
-    buttons [i]. addEventListener ("click", function () 
+// var header = document.getElementById("buttonContainer");
+// var buttons = header.getElementsByClassName ("button");
+// for (var i = 0; i < buttons.length; i++) 
+// {
+//     buttons [i]. addEventListener ("click", function () 
+//     {
+//         var current = document. getElementsByClassName ("active");
+//         current [0].className =
+//         current [0]. className. replace("active", "");
+//         this.className += " active"
+// });
+// }
+
+
+var header = document.getElementById("buttonContainer");
+var buttons = header.getElementsByClassName("button");
+
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () 
     {
-        var current = document. getElementsByClassName ("active");
-        current [0].className =
-        current [0]. className. replace("active", "");
-        this.className += " active"
-});
+        var current = document.getElementsByClassName("active");
+        current[0].classList.remove("active");
+        this.classList.add("active");
+    });
 }

@@ -2,9 +2,14 @@ var money = 10
 var generators = []
 var lastUpdate = Date.now()
 
-
-
-for(let i = 0; i < 10; i++)
+function checkAchieve()
+{
+	if (money > 12)
+	{
+    document.getElementById("achiev").style.display = "block";
+	} 
+}
+for(let i = 0; i < 5; i++)
 {
 	let generator = 
 	{
@@ -31,19 +36,20 @@ function buyGen(i)
 function updateGUI()
 {
 	document.getElementById("currency").textContent = "You have $" + format(money)
-	for(let i = 0; i < 10; i++)
+	for(let i = 0; i < 5; i++)
 	{
 		let g = generators[i]
-		document.getElementById("gen" + (i + 1)).innerHTML = "<br>Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.multiplier) + "x<br>Cost: " + format(g.cost)
+		document.getElementById("gen" + (i + 1)).innerHTML = "Gen " + (i + 1) + "<br>Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.multiplier) + "x<br>Cost: " + format(g.cost)
 		if (g.cost >  money) document.getElementById("gen" + (i + 1)).classList.add("locked")
 		else document.getElementById("gen" + (i + 1)).classList.remove("locked") 
 	}
+	checkAchieve();
 }
 
 function productionLoop(diff)
 {
 	money += generators[0].amount * generators[0].multiplier * diff
-	for(let i = 1; i < 10; i++)
+	for(let i = 1; i < 5; i++)
 	{
 		generators[i - 1].amount += generators[i].amount * generators[i].multiplier * diff / 5
 	}
@@ -66,6 +72,7 @@ function mainLoop()
 
 	lastUpdate = Date.now()
 }
+
 
 setInterval(mainLoop, 50)
 

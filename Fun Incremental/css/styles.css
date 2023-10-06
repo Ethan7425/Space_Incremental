@@ -12,13 +12,13 @@ html, body
     margin: 0;
 }
 
-button 
+/* button 
 {
     padding: 10px 20px;
     background-color: #3498db;
     border: none;
     cursor: pointer;
-}
+} */
 
 .generator
 {
@@ -84,16 +84,25 @@ button
 
 #option, #stats, #map, #achieve
 {
-	justify-content: center;
 	color: white;
+}
+
+.active
+{
+	background-color: blue;
+	box-shadow: 0 0 10px 1px blue;
 }
 
 #optionButton.button, #statsButton.button, #mainbutton.button, #mapButton.button, #achieveButton.button
 {
-	color: white;
+	color: rgb(0, 0, 0);
 	border: 2px solid darkblue;
-	background-color: transparent;
 	border-radius: 5px;
+}
+
+.upgrade-container
+{
+	margin-left: 300px;
 }
 
 #buttonContainer 
@@ -101,12 +110,6 @@ button
     display: flex;
     justify-content: center;
 	justify-content: space-between;
-}
-
-.active
-{
-	background-color: blue;
-	box-shadow: 0 0 10px 1px blue;
 }
 
 .button

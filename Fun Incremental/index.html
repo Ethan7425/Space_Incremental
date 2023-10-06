@@ -18,8 +18,13 @@
 	<!-- Main Scene -->
 	<div class="scene" id="main" style="display: block;">
 		
+		<div class="upgrade-container">
+			<button id="2xGen1" onclick="upgradeGenerator()">Upgrade Gen 1</button>
+		</div>
+
 		<div class="generator-container">
 			<div id="currency"> You have $10</div>
+			
 			<div class="generator" id="gen1" onclick="buyGen(1)">
 				<div id="gen1Name">Gen I</div>
 			</div>
@@ -27,11 +32,11 @@
 			<div class="generator" id="gen3" onclick="buyGen(3)"></div>
 			<div class="generator" id="gen4" onclick="buyGen(4)"></div>
 			<div class="generator" id="gen5" onclick="buyGen(5)"></div>
-			<div class="generator" id="gen6" onclick="buyGen(6)"></div>
+			<!-- <div class="generator" id="gen6" onclick="buyGen(6)"></div>
 			<div class="generator" id="gen7" onclick="buyGen(7)"></div>
 			<div class="generator" id="gen8" onclick="buyGen(8)"></div>
 			<div class="generator" id="gen9" onclick="buyGen(9)"></div>
-			<div class="generator" id="gen10" onclick="buyGen(10)"></div>
+			<div class="generator" id="gen10" onclick="buyGen(10)"></div> -->
 		</div>
 	</div>
 
@@ -57,10 +62,13 @@
 	<div class="scene" id="achieve" style="display: none;">
 		<h1>Achievements</h1>
 		<p>This is the content of the Achievements scene.</p>
+		<div id="achiev" style="display: none;">GG 20 bucks</div>
 	</div>
 </body>
-<script src="js/main.js"></script>
+<script src="js/hide.js"></script>
 <script src="js/scenes.js"></script>
+<script src="js/upgrades.js"></script>
+<script src="js/main.js"></script>
 </html>
 
 
