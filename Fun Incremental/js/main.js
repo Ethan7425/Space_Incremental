@@ -4,6 +4,10 @@ var lastUpdate = Date.now()
 
 function checkAchieve()
 {
+	document.getElementById("gen2").style.display = "block";
+	document.getElementById("gen3").style.display = "block";
+	document.getElementById("gen4").style.display = "block";
+	document.getElementById("gen5").style.display = "block";
 	if (money > 12)
 	{
     document.getElementById("achiev").style.display = "block";
