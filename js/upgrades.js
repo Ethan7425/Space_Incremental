@@ -1,19 +1,13 @@
+let upgrades = []
+
 function upgradeHandler(upgradeId) 
 {
     if (upgradeId === '2xGen1' || upgradeId === 'all') 
     {
         let cost = 20;
-        if (upgradeId === 'all')
-        {
-            if (cost > watts) document.getElementById("2xGen1").classList.add("locked");
-            else document.getElementById("2xGen1").classList.remove("locked");
-        }
-        else
-        {
-            if (cost > watts) return;
-            generators[0].multiplier *= 2;
-            watts -= cost;        
-        } 
+        if (cost > watts) return;
+        generators[0].multiplier *= 2;
+        watts -= cost;        
     }
     else if (upgradeId === '2xGen2' || upgradeId === 'all') 
     {
@@ -25,8 +19,7 @@ function upgradeHandler(upgradeId)
     {
        
     }
-    // if (g.cost > watts) document.getElementById("gen" + (i + 1)).classList.add("locked");
-    // else document.getElementById("gen" + (i + 1)).classList.remove("locked");
+    upgrades.push(upgradeId);
     updateGUI();
     // Hide the button after the upgrade
     document.getElementById(upgradeId).style.display = 'none';
@@ -35,4 +28,14 @@ function upgradeHandler(upgradeId)
 function checkUpgrades()
 {
     upgradeHandler('all')
+}
+
+function resetUpgrades() 
+{
+    upgrades = [];
+    const upgradeButtons = document.querySelectorAll('.upgradeButton');
+    upgradeButtons.forEach(button => 
+    {
+        button.style.display = 'block'; 
+    });
 }

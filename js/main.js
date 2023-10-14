@@ -2,7 +2,7 @@ let watts = 10
 var generators = []
 var lastUpdate = Date.now()
 let prodRate = 0
-
+let iron = 0 
 
 for(let i = 0; i < 10; i++)
 {
@@ -26,6 +26,24 @@ function buyGen(i)
 	g.bought += 1
 	g.multiplier *= 1.05
 	g.cost *= 1.5
+}
+
+function ironPrestige()
+{
+	let ironEarned = watts * 1
+	if (watts < 20) return
+	iron += ironEarned
+	document.getElementById("ironAmount").innerHTML = "Iron : " + format(iron)
+	watts = 10
+	for (let i = 0; i < 10; i++)
+	{
+		generators[i].cost = Math.pow(Math.pow(10, i), i) * 10,
+		generators[i].amount = 0
+		generators[i].bought = 0
+		generators[i].multiplier = 1
+	}
+	hideAll()
+	resetUpgrades()
 }
 
 
@@ -79,6 +97,10 @@ function mainLoop()
 	lastUpdate = Date.now()
 }
 
+function debug()
+{
+	console.log(ironEarned)
+}
 
 setInterval(mainLoop, 50)
 
