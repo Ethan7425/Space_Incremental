@@ -20,22 +20,34 @@
 	<div class="scene" id="main" style="display: block;">
 		
 		<div class="upgrade-container">
-			<button id="2xGen1" onclick="upgradeGenerator()">Upgrade Gen 1</button>
+			<button id="upgradeBtn">Upgrades</button>
+			<div class="upgrades" style="display: none;" >
+				<button class="upgradeButton" id="2xGen1" onclick="upgradeHandler('2xGen1')">Upgrade Gen 1 <br> 20 Watts</button>
+				<button class="upgradeButton" id="2xGen2" onclick="upgradeHandler('2xGen2')">2x Gen 2 <br> 1e3 Watts</button>
+				<button class="upgradeButton">test2</button>
+				<button class="upgradeButton">test3</button>
+			</div>
 		</div>
 
 		<div class="generator-container">
-			<div id="currency"> You have $10</div>
+			<div id="title">Solar Panels</div>
+			<div id="currency"></div>
+			<div id="prodRate">0 W/s</div>
 			
 			<div class="generator" id="gen1" onclick="buyGen(1)"></div>
 			<div class="generator" id="gen2" onclick="buyGen(2)" style="display: none;"></div>
 			<div class="generator" id="gen3" onclick="buyGen(3)" style="display: none;"></div>
 			<div class="generator" id="gen4" onclick="buyGen(4)" style="display: none;"></div>
 			<div class="generator" id="gen5" onclick="buyGen(5)" style="display: none;"></div>
-			<!-- <div class="generator" id="gen6" onclick="buyGen(6)"></div>
-			<div class="generator" id="gen7" onclick="buyGen(7)"></div>
-			<div class="generator" id="gen8" onclick="buyGen(8)"></div>
-			<div class="generator" id="gen9" onclick="buyGen(9)"></div>
-			<div class="generator" id="gen10" onclick="buyGen(10)"></div> -->
+			<div class="generator" id="gen6" onclick="buyGen(6)" style="display: none;"></div>
+			<div class="generator" id="gen7" onclick="buyGen(7)" style="display: none;"></div>
+			<div class="generator" id="gen8" onclick="buyGen(8)" style="display: none;"></div>
+			<div class="generator" id="gen9" onclick="buyGen(9)" style="display: none;"></div>
+			<div class="generator" id="gen10" onclick="buyGen(10)" style="display: none;"></div>
+		</div>
+
+		<div class="iron-gen-container">
+			<div>Iron : 0</div>
 		</div>
 	</div>
 
@@ -63,6 +75,7 @@
 		<p>This is the content of the Achievements scene.</p>
 		<div id="achiev" style="display: none;">GG 20 bucks</div>
 	</div>
+
 </body>
 <script src="js/hide.js"></script>
 <script src="js/scenes.js"></script>

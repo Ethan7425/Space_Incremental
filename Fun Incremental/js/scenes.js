@@ -18,21 +18,6 @@ function changeScene(sceneId)
     }
 }
 
-
-// var header = document.getElementById("buttonContainer");
-// var buttons = header.getElementsByClassName ("button");
-// for (var i = 0; i < buttons.length; i++) 
-// {
-//     buttons [i]. addEventListener ("click", function () 
-//     {
-//         var current = document. getElementsByClassName ("active");
-//         current [0].className =
-//         current [0]. className. replace("active", "");
-//         this.className += " active"
-// });
-// }
-
-
 var header = document.getElementById("buttonContainer");
 var buttons = header.getElementsByClassName("button");
 
@@ -44,3 +29,14 @@ for (var i = 0; i < buttons.length; i++) {
         this.classList.add("active");
     });
 }
+
+const upgradeButton = document.getElementById("upgradeBtn");
+const upgradeOptions = document.querySelector(".upgrades");
+
+upgradeButton.addEventListener("click", () => {
+  if (upgradeOptions.style.display === "block") {
+    upgradeOptions.style.display = "none";
+  } else {
+    upgradeOptions.style.display = "block";
+  }
+});

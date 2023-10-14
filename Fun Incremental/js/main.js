@@ -1,19 +1,10 @@
-var money = 10
+let watts = 10
 var generators = []
 var lastUpdate = Date.now()
+let prodRate = 0
 
-function checkAchieve()
-{
-	document.getElementById("gen2").style.display = "block";
-	document.getElementById("gen3").style.display = "block";
-	document.getElementById("gen4").style.display = "block";
-	document.getElementById("gen5").style.display = "block";
-	if (money > 12)
-	{
-    document.getElementById("achiev").style.display = "block";
-	} 
-}
-for(let i = 0; i < 5; i++)
+
+for(let i = 0; i < 10; i++)
 {
 	let generator = 
 	{
@@ -29,33 +20,44 @@ for(let i = 0; i < 5; i++)
 function buyGen(i)
 {
 	let g = generators[i - 1]
-	if (g.cost > money) return
-	money -= g.cost
+	if (g.cost > watts) return
+	watts -= g.cost
 	g.amount += 1
 	g.bought += 1
 	g.multiplier *= 1.05
 	g.cost *= 1.5
 }
 
-function updateGUI()
+
+function updateGUI() 
 {
-	document.getElementById("currency").textContent = "You have $" + format(money)
-	for(let i = 0; i < 5; i++)
+    document.getElementById("currency").textContent = format(watts) + " W";
+
+    // Calculate the total production rate
+    prodRate = 0;
+    for (let i = 0; i < 10; i++) 
 	{
-		let g = generators[i]
-		document.getElementById("gen" + (i + 1)).innerHTML = "Gen " + (i + 1) + "<br>Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.multiplier) + "x<br>Cost: " + format(g.cost)
-		if (g.cost >  money) document.getElementById("gen" + (i + 1)).classList.add("locked")
-		else document.getElementById("gen" + (i + 1)).classList.remove("locked") 
-	}
-	checkAchieve();
+        prodRate += generators[i].amount * generators[i].multiplier;
+        
+        let g = generators[i];
+        document.getElementById("gen" + (i + 1)).innerHTML = "Gen " + (i + 1) + "<br>Amount: " + format(g.amount) + "<br>Cost: " + format(g.cost);
+        if (g.cost > watts) document.getElementById("gen" + (i + 1)).classList.add("locked");
+        else document.getElementById("gen" + (i + 1)).classList.remove("locked");
+    }
+	// checkUpgrades()
+
+    // Display the total production rate
+    document.getElementById("prodRate").textContent = format(prodRate) + " W/s";
+
+    checkAchieve();
 }
 
 function productionLoop(diff)
 {
-	money += generators[0].amount * generators[0].multiplier * diff
-	for(let i = 1; i < 5; i++)
+	watts += generators[0].amount * generators[0].multiplier * diff
+	for(let i = 1; i < 10; i++)
 	{
-		generators[i - 1].amount += generators[i].amount * generators[i].multiplier * diff / 5
+		generators[i - 1].amount += generators[i].amount * generators[i].multiplier * diff / 10
 	}
 }
 

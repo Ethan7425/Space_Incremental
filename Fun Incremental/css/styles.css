@@ -1,3 +1,5 @@
+/*----------------------------- Main ----------------------------------------*/
+
 *
 {
 	box-sizing: border-box;
@@ -24,14 +26,7 @@ html, body
 	z-index: -1;
 }
 
-
-/* button 
-{
-    padding: 10px 20px;
-    background-color: #3498db;
-    border: none;
-    cursor: pointer;
-} */
+/*----------------------------- Main Generator ----------------------------------------*/
 
 .generator.locked
 {
@@ -47,61 +42,44 @@ html, body
 .generator-container
 {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
+	flex-direction: column;
+	/* flex-wrap: wrap; */
+	/* align-items: flex-start; */
 	width: 300px;
-	height: 900px;
-	top: 50px;
-	left: 800px;
+	height: 100px;
+	top: 100px;
+	left: 1300px;
 	position: relative;
 }
 
-/* .generator
+
+.generator 
 {
-	border: 2px solid rgb(82, 82, 88);
-	background-color: rgba(20, 20, 105, 0.517);
-	text-align: center;
-	width: 300px;
-	height: 100px;
-	padding: 10px;
-	margin: 5px;
-	font-size: 1.3em;
-	cursor: pointer;
-	color: white;
-	transition: box-shadow 0.3s;
-} */
-
-
-
-
-
-.generator {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2b82b484; 
-    color: white; /* Text color */
-    border-top-left-radius: 40px;
-    font-size: 16px;
+	margin: 10px;
+    padding: 5px 10px;
+	width: 280px;
+	height: 65px;
+    background-color: #00f7ff46; 
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
 	border: solid 4px black;
-    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s;
-	box-shadow: 0 0 15px rgba(14, 158, 241, 0.8);
+	box-shadow: 0 0 15px #00f7ff94;
 }
 
 
 .generator:not(.locked):hover 
 {
-    background-color: #1e6390; /* Hover background color */
     color: #f0f0f0; /* Hover text color */
 	border: solid 4px blue;
 }
 
 .generator.locked:hover 
 {
-    background-color: #1e6390; /* Hover background color */
     color: #f0f0f0; /* Hover text color */
 	border: solid 4px rgb(230, 25, 25);
 }
@@ -110,12 +88,28 @@ html, body
 #currency
 {
 	margin: 10px;
-	font-size: 2.4em;
+	font-size: 2em;
 	height: 50px;
-	width: 300px;
 	text-align: center;
 	color: azure;
 }
+
+#title
+{
+	font-size: 2.5em;
+	color: white;
+	text-align: center;
+	border: solid 4px black;
+}
+
+#prodRate
+{
+	color: white;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+/*----------------------------- Navigation Menu ----------------------------------------*/
 
 #option, #stats, #map, #achieve
 {
@@ -133,11 +127,6 @@ html, body
 	color: rgb(0, 0, 0);
 	border: 2px solid darkblue;
 	border-radius: 5px;
-}
-
-.upgrade-container
-{
-	margin-left: 300px;
 }
 
 #buttonContainer 
@@ -159,3 +148,52 @@ html, body
 	box-shadow: 0 0 10px 1px rgb(15, 15, 201);
 	transform: scale(1.2);
 }
+
+
+/*----------------------------- Upgrades ----------------------------------------*/
+
+.upgrade-container 
+{
+	position: relative;
+	width: 20%;
+	top: 900px;
+	left: 1300px;
+}
+
+.upgrades 
+{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 100%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.upgradeButton 
+{
+	display: block;
+	padding: 8px 12px;
+	margin: 4px;
+	text-align: center;
+	width: 100%;
+}
+
+.upgradeButton:hover 
+{
+  	background-color: #f0f0f0;
+}
+
+.upgradeButton.locked
+{
+	background-color: transparent;
+}
+
+/* .generator:not(.locked):hover 
+{
+    box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.8);
+    border-color: blue;
+} */
+
+/*----------------------------- Iron Ores ----------------------------------------*/
+
