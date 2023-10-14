@@ -53,10 +53,9 @@ function updateGUI()
 
     // Calculate the total production rate
     prodRate = 0;
-    for (let i = 0; i < 10; i++) 
+    prodRate += generators[0].amount * generators[0].multiplier;
+	for (let i = 0; i < 10; i++) 
 	{
-        prodRate += generators[i].amount * generators[i].multiplier;
-        
         let g = generators[i];
         document.getElementById("gen" + (i + 1)).innerHTML = "Gen " + (i + 1) + "<br>Amount: " + format(g.amount) + "<br>Cost: " + format(g.cost);
         if (g.cost > watts) document.getElementById("gen" + (i + 1)).classList.add("locked");
@@ -72,7 +71,15 @@ function updateGUI()
 
 function productionLoop(diff)
 {
-	watts += generators[0].amount * generators[0].multiplier * diff
+	let productionMultiplier = iron * 1
+	if (productionMultiplier === 0)
+	{
+		productionMultiplier = 1
+	}
+	let baseProduction = generators[0].amount * generators[0].multiplier;
+	let boostedProduction = baseProduction * productionMultiplier;
+
+	watts += boostedProduction * diff;
 	for(let i = 1; i < 10; i++)
 	{
 		generators[i - 1].amount += generators[i].amount * generators[i].multiplier * diff / 10
