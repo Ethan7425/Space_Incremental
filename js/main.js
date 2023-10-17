@@ -2,7 +2,8 @@ let watts = 10
 var generators = []
 var lastUpdate = Date.now()
 let prodRate = 0
-let iron = 0 
+let iron = 0
+let boostedProduction = 0 
 
 for(let i = 0; i < 10; i++)
 {
@@ -27,10 +28,10 @@ function buyGen(i)
 	g.multiplier *= 1.05
 	g.cost *= 1.5
 }
-
+   
 function ironPrestige()
 {
-	let ironEarned = watts * 1
+	let ironEarned = watts * 0.1
 	if (watts < 20) return
 	iron += ironEarned
 	document.getElementById("ironAmount").innerHTML = "Iron : " + format(iron)
@@ -51,9 +52,12 @@ function updateGUI()
 {
     document.getElementById("currency").textContent = format(watts) + " W";
 
-    // Calculate the total production rate
+    // Calculate and display the total production rate
     prodRate = 0;
-    prodRate += generators[0].amount * generators[0].multiplier;
+	prodRate += boostedProduction;
+	document.getElementById("prodRate").textContent = format(prodRate) + " W/s";
+
+	// Display the generators
 	for (let i = 0; i < 10; i++) 
 	{
         let g = generators[i];
@@ -62,22 +66,18 @@ function updateGUI()
         else document.getElementById("gen" + (i + 1)).classList.remove("locked");
     }
 	// checkUpgrades()
-
-    // Display the total production rate
-    document.getElementById("prodRate").textContent = format(prodRate) + " W/s";
-
     checkAchieve();
 }
 
 function productionLoop(diff)
 {
-	let productionMultiplier = iron * 1
+	let productionMultiplier = iron * 1.001
 	if (productionMultiplier === 0)
 	{
 		productionMultiplier = 1
 	}
 	let baseProduction = generators[0].amount * generators[0].multiplier;
-	let boostedProduction = baseProduction * productionMultiplier;
+	boostedProduction = baseProduction * productionMultiplier;
 
 	watts += boostedProduction * diff;
 	for(let i = 1; i < 10; i++)

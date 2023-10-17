@@ -127,14 +127,17 @@ html, body
 	color: rgb(0, 0, 0);
 	border: 2px solid darkblue;
 	border-radius: 5px;
+	width: 150px;
 }
 
 #buttonContainer 
 {
-	padding: 10px;
     display: flex;
-    justify-content: center;
+	position: absolute;
+	flex-direction: column;
 	justify-content: space-between;
+	width: 200px;
+	top: 200px;
 }
 
 .button
