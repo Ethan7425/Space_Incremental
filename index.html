@@ -9,11 +9,16 @@
 	<div class="bg"></div>
 	<!-- Buttons to change the scene -->
 	<div id="buttonContainer">
-		<button class="button" id="optionButton" onclick="changeScene('option')">Options</button>
-		<button class="button" id="statsButton" onclick="changeScene('stats')">Stats</button>
+		<div class="drop" id="all" >Space Incremental</div>
 		<button class="button active" id="mainButton" onclick="changeScene('main')">Main</button>
+		
 		<button class="button" id="mapButton" onclick="changeScene('map')">Map</button>
-		<button class="button" id="achieveButton" onclick="changeScene('achieve')">Achievements</button>
+		
+		<button class="drop" id="Extra" onclick="hideExtra()">Extra
+			<button class="button" id="optionButton" onclick="changeScene('option')" style="display: block;">Options</button>
+			<button class="button" id="statsButton" onclick="changeScene('stats')" style="display: block;">Stats</button>
+			<button class="button" id="achieveButton" onclick="changeScene('achieve')">Achievements</button>
+		</button>
 	</div>
 
 	<!-- Main Scene -->
@@ -46,7 +51,12 @@
 			<div class="generator" id="gen10" onclick="buyGen(10)" style="display: none;"></div>
 		</div>
 
-		
+		<div class="earthButton">
+			<img src="img/earth.png" alt="button" onclick="clickEarth()" >
+			<div class="health-bar">
+				<div class="health"></div>
+			</div>
+		</div>
 
 		<div class="iron-gen-container">
 			<button class="ironPrestige" onclick="ironPrestige()">Iron Prestige</button>
@@ -80,6 +90,7 @@
 	</div>
 
 </body>
+<script src="js/earth.js"></script>
 <script src="js/hide.js"></script>
 <script src="js/scenes.js"></script>
 <script src="js/upgrades.js"></script>

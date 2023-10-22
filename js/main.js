@@ -71,11 +71,7 @@ function updateGUI()
 
 function productionLoop(diff)
 {
-	let productionMultiplier = iron * 1.001
-	if (productionMultiplier === 0)
-	{
-		productionMultiplier = 1
-	}
+	let productionMultiplier = 1 + (iron * 0.001);
 	let baseProduction = generators[0].amount * generators[0].multiplier;
 	boostedProduction = baseProduction * productionMultiplier;
 
@@ -112,3 +108,8 @@ function debug()
 setInterval(mainLoop, 50)
 
 updateGUI()
+
+function debug()
+{
+	console.log("cooucou")
+}

@@ -25,6 +25,35 @@ html, body
 	position: fixed;
 	z-index: -1;
 }
+/*----------------------------- Earth Button ----------------------------------------*/
+
+.earthButton
+{
+	position: absolute;
+	left: 400px;
+	top: 200px;
+}
+
+.health-bar 
+{
+	height: 10px;
+	width: 400px;
+	border: 1px solid #333;
+	margin: 0 auto;
+}
+  
+.health 
+{
+	height: 100%; 
+	background: green;
+	width: 100%; /* Starts full */
+	transition: width 0.2s;
+}
+
+.earthButton.clicked 
+{
+	color: red;
+}
 
 /*----------------------------- Main Generator ----------------------------------------*/
 
@@ -111,22 +140,18 @@ html, body
 
 /*----------------------------- Navigation Menu ----------------------------------------*/
 
-#option, #stats, #map, #achieve
+.button.active
 {
-	color: white;
-}
-
-.active
-{
-	background-color: blue;
 	box-shadow: 0 0 10px 1px blue;
+	width: 192px;
+	color: red;
 }
 
-#optionButton.button, #statsButton.button, #mainbutton.button, #mapButton.button, #achieveButton.button
+.button
 {
-	color: rgb(0, 0, 0);
 	border: 2px solid darkblue;
-	border-radius: 5px;
+	background-color: black;
+	margin-top: 5px;
 	width: 150px;
 }
 
@@ -135,13 +160,16 @@ html, body
     display: flex;
 	position: absolute;
 	flex-direction: column;
-	justify-content: space-between;
+
 	width: 200px;
-	top: 200px;
+	height: 1020px;
+	background-color: black;
+	border-right: solid 4px #f0f0f0;
 }
 
 .button
 {
+	color: white;
     padding: 10px 20px; 
     transition: all 0.3s;
 }
@@ -152,6 +180,16 @@ html, body
 	transform: scale(1.2);
 }
 
+.drop
+{
+	height: 50px;
+	border: solid 2px #f0f0f0;
+	background-color: black;
+	color: aqua;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 /*----------------------------- Upgrades ----------------------------------------*/
 
