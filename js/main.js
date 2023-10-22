@@ -67,6 +67,7 @@ function updateGUI()
     }
 	// checkUpgrades()
     checkAchieve();
+	updateHealthText() 
 }
 
 function productionLoop(diff)

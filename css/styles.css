@@ -1,3 +1,12 @@
+/*----------------------------- Colors ----------------------------------------*/
+
+:root 
+{
+	--midnight-color: #0e2453;
+	--lochmara-color: #2e6a9d;
+	--bitter: #f97c5c;
+	--amaranth: #ea2a4f;
+}
 /*----------------------------- Main ----------------------------------------*/
 
 *
@@ -16,7 +25,7 @@ html, body
 
 .bg
 {
-	background-image: url(../img/Space_Background.png);
+	background-image: url(../img/space_bg.png);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -36,10 +45,13 @@ html, body
 
 .health-bar 
 {
-	height: 10px;
+	height: 20px;
 	width: 400px;
-	border: 1px solid #333;
+	border: 4px solid black;
 	margin: 0 auto;
+	display: flex;
+	/* flex-direction: column; */
+	align-items: center;
 }
   
 .health 
@@ -50,9 +62,14 @@ html, body
 	transition: width 0.2s;
 }
 
-.earthButton.clicked 
+.health-text
 {
-	color: red;
+	position: absolute;
+	text-align: center;
+	display: block;
+	bottom: -20px;
+	left: 45%;
+	color: white;
 }
 
 /*----------------------------- Main Generator ----------------------------------------*/
@@ -64,8 +81,8 @@ html, body
 
 .generator:not(.locked):hover 
 {
-    box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.8);
-    border-color: blue;
+    box-shadow: 0 0 10px 2px var(--lochmara-color);
+    border-color: var(--lochmara-color);
 }
 
 .generator-container
@@ -88,7 +105,8 @@ html, body
     padding: 5px 10px;
 	width: 280px;
 	height: 65px;
-    background-color: #00f7ff46; 
+    background-color: var(--midnight-color);
+	box-shadow: 0 0 15px var(--midnight-color);
     color: white;
     border-radius: 4px;
     font-size: 14px;
@@ -97,20 +115,15 @@ html, body
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s;
-	box-shadow: 0 0 15px #00f7ff94;
 }
 
 
-.generator:not(.locked):hover 
-{
-    color: #f0f0f0; /* Hover text color */
-	border: solid 4px blue;
-}
+
 
 .generator.locked:hover 
 {
-    color: #f0f0f0; /* Hover text color */
-	border: solid 4px rgb(230, 25, 25);
+	border: solid 4px var(--amaranth);
+	box-shadow: 0 0 10px 2px var(--amaranth);
 }
 
 
@@ -228,12 +241,6 @@ html, body
 .upgradeButton.locked
 {
 	background-color: transparent;
-}
-
-.generator:not(.locked):hover 
-{
-    box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.8);
-    border-color: blue;
 }
 
 /*----------------------------- Iron Ores ----------------------------------------*/

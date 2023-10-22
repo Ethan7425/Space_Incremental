@@ -1,4 +1,5 @@
-let health = 10; 
+let health = 500; 
+let totalHealth = health; 
 
 function clickEarth() 
 {
@@ -7,12 +8,19 @@ function clickEarth()
 
     if(health === 0) 
     {
-      health = 10; // Reset
+      health = totalHealth; // Reset
       
       // Give reward
       ironPrestige();
       // giveIronOre(1); 
     }
-    let healthPercent = health / 10 * 100;
+    updateHealthText();
+    let healthPercent = health / totalHealth * 100;
     document.querySelector('.health').style.width = healthPercent + '%';
+}
+
+function updateHealthText() 
+{
+  let healthText = document.querySelector('.health-text');
+  healthText.innerText = `${health} / ${totalHealth} HP`; 
 }
