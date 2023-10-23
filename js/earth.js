@@ -1,4 +1,4 @@
-let health = 500; 
+let health = 10; 
 let totalHealth = health; 
 
 function clickEarth() 
@@ -11,7 +11,7 @@ function clickEarth()
       health = totalHealth; // Reset
       
       // Give reward
-      ironPrestige();
+        //ironPrestige();
       // giveIronOre(1); 
     }
     updateHealthText();

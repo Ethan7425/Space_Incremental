@@ -11,7 +11,7 @@
 	<div id="buttonContainer">
 		<div class="drop" id="all" >Space Incremental</div>
 		<button class="button active" id="mainButton" onclick="changeScene('main')">Main</button>
-		
+		<button class="button" id="upgradesButton" onclick="changeScene('upgrades')">Upgrades</button>
 		<button class="button" id="mapButton" onclick="changeScene('map')">Map</button>
 		
 		<button class="drop" id="Extra" onclick="hideExtra()">Extra
@@ -21,18 +21,13 @@
 		</button>
 	</div>
 
+	<div class="inventoryContainer">
+		<div class="inventoryTitle">Inventory</div>
+		<div class="ressource" id="watts" style="display: block;">Watts</div>
+	</div>
+
 	<!-- Main Scene -->
 	<div class="scene" id="main" style="display: block;">
-		
-		<div class="upgrade-container">
-			<button id="upgradeBtn">Upgrades</button>
-			<div class="upgrades" style="display: none;" >
-				<button class="upgradeButton" id="2xGen1" onclick="upgradeHandler('2xGen1')">Upgrade Gen 1 <br> 20 Watts</button>
-				<button class="upgradeButton" id="2xGen2" onclick="upgradeHandler('2xGen2')">2x Gen 2 <br> 1e3 Watts</button>
-				<button class="upgradeButton">test2</button>
-				<button class="upgradeButton">test3</button>
-			</div>
-		</div>
 
 		<div class="generator-container">
 			<div id="title">Solar Panels</div>
@@ -52,6 +47,7 @@
 		</div>
 
 		<div class="earthButton">
+			<p class="test">Does Nothing For Now <br> Click it for fun if you want</p>
 			<img src="img/earth.png" alt="button" onclick="clickEarth()" >
 			<div class="health-bar">
 				<div class="health-text"></div>
@@ -59,10 +55,10 @@
 			</div>
 		</div>
 
-		<div class="iron-gen-container">
+		<!-- <div class="iron-gen-container">
 			<button class="ironPrestige" onclick="ironPrestige()">Iron Prestige</button>
 			<div id="ironAmount">Iron : 0</div>
-		</div>
+		</div> -->
 	</div>
 
 	<!-- Options Scene -->
@@ -90,7 +86,22 @@
 		<div id="achiev" style="display: none;">GG 20 bucks</div>
 	</div>
 
+	<div class="scene" id="upgrades" style="display: none;">
+		<div class="upgrade-container">
+			<button id="upgradeBtn">Upgrades</button>
+			<div class="upgrades" style="display: none;" >
+				<button class="upgradeButton" id="up1" onclick="upgradeHandler('up1')" style="display: block;"></button>
+				<button class="upgradeButton" id="up2" onclick="upgradeHandler('up2')" style="display: block;"></button>
+				<button class="upgradeButton" id="up3" onclick="upgradeHandler('up3')" style="display: block;"></button>
+				<button class="upgradeButton" id="up4" onclick="upgradeHandler('up4')" style="display: block;"></button>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
+<script src="js/inventory.js"></script>
 <script src="js/earth.js"></script>
 <script src="js/hide.js"></script>
 <script src="js/scenes.js"></script>

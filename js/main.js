@@ -65,9 +65,18 @@ function updateGUI()
         if (g.cost > watts) document.getElementById("gen" + (i + 1)).classList.add("locked");
         else document.getElementById("gen" + (i + 1)).classList.remove("locked");
     }
+
+	for (let i = 0; i < 4; i++)
+	{
+		let u = upgrades[i];
+		document.getElementById("up" + (i + 1)).innerHTML = u.name + "<br>Cost: " + format(u.cost) + "<br>Effect: " + u.effect;
+		if (u.cost > watts) document.getElementById("up" + (i + 1)).classList.add("locked");
+		else document.getElementById("up" + (i + 1)).classList.remove("locked");
+	}
 	// checkUpgrades()
     checkAchieve();
-	updateHealthText() 
+	updateHealthText();
+	updateWattsDisplay();
 }
 
 function productionLoop(diff)

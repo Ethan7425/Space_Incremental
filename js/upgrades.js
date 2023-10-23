@@ -1,21 +1,46 @@
-let upgrades = []
+var upgrades = 
+[
+    {
+        name: "First Upgrade",
+        cost: 20,
+        effect: "coucou",
+    },
+
+    {
+        name: "Second Upgrade",
+        cost: 1e3,
+        effect: "re coucou"
+    },
+
+    {
+        name: "Second Upgrade",
+        cost: 1e3,
+        effect: "re coucou"
+    },
+
+    {
+        name: "Second Upgrade",
+        cost: 1e3,
+        effect: "re coucou"
+    },
+]
 
 function upgradeHandler(upgradeId) 
 {
-    if (upgradeId === '2xGen1' || upgradeId === 'all') 
+    if (upgradeId === 'up1') 
     {
         let cost = 20;
         if (cost > watts) return;
-        generators[0].multiplier *= 2;
+        generators[0].multiplier *= 1.5;
         watts -= cost;        
     }
-    else if (upgradeId === '2xGen2' || upgradeId === 'all') 
+    else if (upgradeId === 'up2') 
     {
         if (1000 > watts) return;
         generators[1].multiplier *= 2;
         watts -= 1000;  
     } 
-    else if (upgradeId === 'test2' || upgradeId === 'all') 
+    else if (upgradeId === 'test2') 
     {
        
     }
