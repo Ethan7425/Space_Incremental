@@ -69,7 +69,7 @@ function updateGUI()
 	for (let i = 0; i < 4; i++)
 	{
 		let u = upgrades[i];
-		document.getElementById("up" + (i + 1)).innerHTML = u.name + "<br>Cost: " + format(u.cost) + "<br>Effect: " + u.effect;
+		document.getElementById("up" + (i + 1)).innerHTML = u.name + "<br>Cost: " + format(u.cost) + "<br>" + u.effect;
 		if (u.cost > watts) document.getElementById("up" + (i + 1)).classList.add("locked");
 		else document.getElementById("up" + (i + 1)).classList.remove("locked");
 	}

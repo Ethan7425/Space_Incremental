@@ -3,25 +3,25 @@ var upgrades =
     {
         name: "First Upgrade",
         cost: 20,
-        effect: "coucou",
+        effect: "Make Gen 1 twice as efficient",
     },
 
     {
         name: "Second Upgrade",
         cost: 1e3,
-        effect: "re coucou"
+        effect: "Make Gen 2 twice as efficient"
     },
 
     {
-        name: "Second Upgrade",
+        name: "NYI",
         cost: 1e3,
-        effect: "re coucou"
+        effect: "Make Gen 3 twice as efficient"
     },
 
     {
-        name: "Second Upgrade",
+        name: "NYI",
         cost: 1e3,
-        effect: "re coucou"
+        effect: "Make Gen 4 twice as efficient"
     },
 ]
 
