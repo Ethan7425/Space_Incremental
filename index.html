@@ -3,7 +3,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
-	<title>Fun Incremental</title>
+	<title>Interstellar Incremental</title>
 </head>
 <body>
 	<div class="bg"></div>
@@ -23,7 +23,9 @@
 
 	<div class="inventoryContainer">
 		<div class="inventoryTitle">Inventory</div>
+		<div class="ressourceType" id="electricity">Energy</div>
 		<div class="ressource" id="watts" style="display: block;">Watts</div>
+		<div class="ressourceType" id="earthOres" >Earth Ores</div>
 	</div>
 
 	<!-- Main Scene -->
@@ -63,20 +65,22 @@
 
 	<!-- Options Scene -->
 	<div class="scene" id="option" style="display: none;">
-		<h1>Options</h1>
-		<p>This is the content of the option scene.</p>
+
     </div>
 
 	<!-- Stats Scene -->
 	<div class="scene" id="stats" style="display: none;">
-		<h1>Stats</h1>
-		<p>This is the content of the stats scene.</p>
+
 	</div>
 
 	<!-- Map Scene -->
 	<div class="scene" id="map" style="display: none;">
 		<h1>Map</h1>
-		<div class="planets" id="earth" onclick="changeScene('main')"> Earth </div>
+		<div class="planetContainer">
+			<div class="planets" id="earth" onclick="changeScene('main')">
+			<img src="img/earth.png" alt="button">
+			</div>
+		</div>
 	</div>
 
 	<!-- Achievements Scene -->
@@ -89,7 +93,7 @@
 	<div class="scene" id="upgrades" style="display: none;">
 		<div class="upgrade-container">
 			<button id="upgradeBtn">Upgrades</button>
-			<div class="upgrades" style="display: none;" >
+			<div class="upgrades" style="display: block;" >
 				<button class="upgradeButton" id="up1" onclick="upgradeHandler('up1')" style="display: block;"></button>
 				<button class="upgradeButton" id="up2" onclick="upgradeHandler('up2')" style="display: block;"></button>
 				<button class="upgradeButton" id="up3" onclick="upgradeHandler('up3')" style="display: block;"></button>

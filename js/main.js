@@ -61,7 +61,7 @@ function updateGUI()
 	for (let i = 0; i < 10; i++) 
 	{
         let g = generators[i];
-        document.getElementById("gen" + (i + 1)).innerHTML = "Gen " + (i + 1) + "<br>Amount: " + format(g.amount) + "<br>Cost: " + format(g.cost);
+        document.getElementById("gen" + (i + 1)).innerHTML = "Solar Panel " + (i + 1) + "<br>Amount: " + format(g.amount) + "<br>" + format(g.cost) + " W" + "<br>Efficiency: " + format(g.multiplier) ;
         if (g.cost > watts) document.getElementById("gen" + (i + 1)).classList.add("locked");
         else document.getElementById("gen" + (i + 1)).classList.remove("locked");
     }

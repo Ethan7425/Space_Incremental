@@ -1,34 +1,32 @@
 
 function changeScene(sceneId) 
 {
-    // Get references to all scene elements
-    const scenes = document.querySelectorAll('.scene');
-    const desiredScene = document.getElementById(sceneId);
 
-    // Iterate through scenes and hide them
-    scenes.forEach(scene => 
-    {
-        scene.style.display = 'none';
-    });
+  // Get all buttons
+  const buttons = document.querySelectorAll('.button');
 
-    // Show the desired scene
-    if (desiredScene) 
-    {
-        desiredScene.style.display = 'block';
-    }
+  // Remove active class from all buttons
+  buttons.forEach(button => 
+  {
+    button.classList.remove('active');
+  });
+
+  // Get clicked button and add active class
+  const clickedButton = document.getElementById(sceneId + 'Button');
+  clickedButton.classList.add('active');
+
+  // Hide all scenes
+  const scenes = document.querySelectorAll('.scene'); 
+  scenes.forEach(scene => 
+  {
+    scene.style.display = 'none';
+  });
+
+  // Show clicked scene
+  const desiredScene = document.getElementById(sceneId);
+  desiredScene.style.display = 'block';
 }
 
-var header = document.getElementById("buttonContainer");
-var buttons = header.getElementsByClassName("button");
-
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function () 
-    {
-        var current = document.getElementsByClassName("active");
-        current[0].classList.remove("active");
-        this.classList.add("active");
-    });
-}
 
 const upgradeButton = document.getElementById("upgradeBtn");
 const upgradeOptions = document.querySelector(".upgrades");
