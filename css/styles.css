@@ -365,3 +365,13 @@ html, body
 	height: auto;
 }
 
+/*----------------------------- Options ----------------------------------------*/
+
+.save
+{
+	position: relative;
+
+	color: white;
+	left: 200px;
+	top: 100px;
+}
