@@ -1,24 +1,28 @@
 var upgrades = 
 [
     {
+        id: 'up1',
         name: "First Upgrade",
         cost: 35,
-        effect: "Efficiency x1.5",
+        effect: "Solar Panel 1 Efficiency x2",
     },
 
     {
+        id: 'up2',
         name: "Second Upgrade",
         cost: 500,
         effect: "Make Gen 2 twice as efficient"
     },
 
     {
+        id: 'up3',
         name: "Third Upgrade",
         cost: 1e3,
         effect: "Make Gen 3 twice as efficient"
     },
 
     {
+        id: 'up4',
         name: "Fourth Upgrade",
         cost: 1e3,
         effect: "Make Gen 4 twice as efficient"
@@ -27,22 +31,33 @@ var upgrades =
 
 function upgradeHandler(upgradeId) 
 {
+
+    const upgrade = upgrades.find(u => u.id === upgradeId);
+    const cost = upgrade.cost;
+
     if (upgradeId === 'up1') 
     {
-        let cost = 20;
         if (cost > watts) return;
-        generators[0].multiplier *= 1.5;
+        generators[0].multiplier *= 2;
         watts -= cost;        
     }
     else if (upgradeId === 'up2') 
     {
-        if (1000 > watts) return;
+        if (cost > watts) return;
         generators[1].multiplier *= 2;
-        watts -= 1000;  
+        watts -= cost;  
     } 
-    else if (upgradeId === 'test2') 
+    else if (upgradeId === 'up3') 
     {
-       
+        if (cost > watts) return;
+        generators[2].multiplier *= 2;
+        watts -= cost;  
+    }
+    else if (upgradeId === 'up4')
+    {
+        if (cost > watts) return;
+        generators[3].multiplier *= 2;
+        watts -= cost;  
     }
     upgrades.push(upgradeId);
     updateGUI();

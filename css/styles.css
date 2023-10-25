@@ -46,7 +46,7 @@ html, body
 .earthButton
 {
 	position: absolute;
-	left: 400px;
+	left: 20%;
 	top: 200px;
 }
 
@@ -100,9 +100,9 @@ html, body
 	/* align-items: flex-start; */
 	width: 300px;
 	height: 100px;
-	top: 100px;
-	left: 1100px;
-	position: relative;
+	top: 10%;
+	right: 20%;
+	position: absolute;
 }
 
 
