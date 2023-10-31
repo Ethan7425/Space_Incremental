@@ -1,11 +1,23 @@
-// Get reference to watts div 
+// Get reference to div and Update text 
 const wattsDiv = document.getElementById('watts');
-
-// Update watts text 
 wattsDiv.innerText = format(watts) + ' Watts'; 
 
-// Call this whenever watts amount changes
+const ironDiv = document.getElementById('iron');
+ironDiv.innerText = format(iron) +' Iron';
+
+
+function updateAllRessource()
+{
+  updateWattsDisplay();
+  updateIronDisplay();
+}
+
 function updateWattsDisplay() 
 {
   wattsDiv.innerText = format(watts) + ' Watts';
+}
+
+function updateIronDisplay()
+{
+  ironDiv.innerText = format(iron) +'Iron';
 }

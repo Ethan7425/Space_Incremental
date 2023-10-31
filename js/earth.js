@@ -9,9 +9,9 @@ function clickEarth()
     if(health === 0) 
     {
       health = totalHealth; // Reset
-      
       // Give reward
-        //ironPrestige();
+      iron += 1;
+      // ironPrestige();
       // giveIronOre(1); 
     }
     updateHealthText();

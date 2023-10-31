@@ -26,9 +26,10 @@
 		<div class="ressourceType" id="electricity">Energy</div>
 		<div class="ressource" id="watts" style="display: block;">Watts</div>
 		<div class="ressourceType" id="earthOres" >Earth Ores</div>
+		<div class="ressource" id="iron">Iron</div>
 	</div>
 
-	<!-- Main Scene -->
+	<!-- Main Scene ---------------------------------------------------------------->
 	<div class="scene" id="main" style="display: block;">
 
 		<div class="generator-container">
@@ -49,31 +50,32 @@
 		</div>
 
 		<div class="earthButton">
-			<p class="test">Does Nothing For Now <br> Click it for fun if you want !</p>
+			<p class="test">if HP falls to 0 <br> You'll unlock something <br> In exchange of all your watts</p>
 			<img src="img/earth.png" alt="button" onclick="clickEarth()" >
 			<div class="health-bar">
 				<div class="health-text"></div>
 				<div class="health"></div>
+				<button class="test" onclick="debug()">debug</button>
 			</div>
 		</div>
 
-		<!-- <div class="iron-gen-container">
+		<div class="iron-gen-container">
 			<button class="ironPrestige" onclick="ironPrestige()">Iron Prestige</button>
 			<div id="ironAmount">Iron : 0</div>
-		</div> -->
+		</div>
 	</div>
 
-	<!-- Options Scene -->
+	<!-- Options Scene ------------------------------------------------------------->
 	<div class="scene" id="option" style="display: none;">
 		<button class="save" onclick="saveGame()">SAVE</button>
     </div>
 
-	<!-- Stats Scene -->
+	<!-- Stats Scene ---------------------------------------------------------------->
 	<div class="scene" id="stats" style="display: none;">
 
 	</div>
 
-	<!-- Map Scene -->
+	<!-- Map Scene ---------------------------------------------------------------->
 	<div class="scene" id="map" style="display: none;">
 		<h1>Map</h1>
 		<div class="planetContainer">
@@ -83,21 +85,38 @@
 		</div>
 	</div>
 
-	<!-- Achievements Scene -->
+	<!-- Achievements Scene ---------------------------------------------------------->
 	<div class="scene" id="achieve" style="display: none;">
 		<h1>Achievements</h1>
 		<p>This is the content of the Achievements scene.</p>
 		<div id="achiev" style="display: none;">GG 20 bucks</div>
 	</div>
 
+	<!-- Upgrades Scene ---------------------------------------------------------->
 	<div class="scene" id="upgrades" style="display: none;">
 		<div class="upgrade-container">
-			<button id="upgradeBtn">Upgrades</button>
+			<button id="upgradeBtn">Solar Panel <br> Upgrades</button>
 			<div class="upgrades" style="display: block;" >
 				<button class="upgradeButton" id="up1" onclick="upgradeHandler('up1')" style="display: block;"></button>
 				<button class="upgradeButton" id="up2" onclick="upgradeHandler('up2')" style="display: block;"></button>
 				<button class="upgradeButton" id="up3" onclick="upgradeHandler('up3')" style="display: block;"></button>
 				<button class="upgradeButton" id="up4" onclick="upgradeHandler('up4')" style="display: block;"></button>
+				<button class="upgradeButton" id="up5" onclick="upgradeHandler('up5')" style="display: block;"></button>
+				<button class="upgradeButton" id="up6" onclick="upgradeHandler('up6')" style="display: block;"></button>
+				<button class="upgradeButton" id="up7" onclick="upgradeHandler('up7')" style="display: block;"></button>
+				<button class="upgradeButton" id="up8" onclick="upgradeHandler('up8')" style="display: block;"></button>
+				<button class="upgradeButton" id="up9" onclick="upgradeHandler('up9')" style="display: block;"></button>
+				<button class="upgradeButton" id="up10" onclick="upgradeHandler('up10')" style="display: block;"></button>
+			</div>
+		</div>
+
+		<div class="earth-upgrade-container">
+			<button id="upgradeBtn">Earth <br> Upgrades</button>
+			<div class="upgrades" style="display: block;" >
+				<button class="upgradeButton" id="up11" onclick="upgradeHandler('up11')" style="display: block;"></button>
+				<button class="upgradeButton" id="up12" onclick="upgradeHandler('up12')" style="display: block;"></button>
+				<button class="upgradeButton" id="up13" onclick="upgradeHandler('up13')" style="display: block;"></button>
+				<button class="upgradeButton" id="up14" onclick="upgradeHandler('up14')" style="display: block;"></button>
 			</div>
 		</div>
 	</div>

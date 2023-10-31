@@ -32,7 +32,6 @@ function buyGen(i)
 function ironPrestige()
 {
 	let ironEarned = watts * 0.1
-	if (watts < 20) return
 	iron += ironEarned
 	document.getElementById("ironAmount").innerHTML = "Iron : " + format(iron)
 	watts = 10
@@ -42,6 +41,7 @@ function ironPrestige()
 		generators[i].amount = 0
 		generators[i].bought = 0
 		generators[i].multiplier = 1
+		// productionMultiplier = 1;
 	}
 	hideAll()
 	resetUpgrades()
@@ -66,23 +66,26 @@ function updateGUI()
         else document.getElementById("gen" + (i + 1)).classList.remove("locked");
     }
 
-	for (let i = 0; i < 4; i++)
+	//Display the upgrades
+	for (let i = 0; i < 11; i++)
 	{
 		let u = upgrades[i];
 		document.getElementById("up" + (i + 1)).innerHTML = u.name + "<br>Cost: " + format(u.cost) + "W" + "<br>" + u.effect;
 		if (u.cost > watts) document.getElementById("up" + (i + 1)).classList.add("locked");
 		else document.getElementById("up" + (i + 1)).classList.remove("locked");
 	}
-	// checkUpgrades()
+
     checkAchieve();
 	updateHealthText();
+	
 	updateWattsDisplay();
+	// updateIronDisplay();
 }
 
 function productionLoop(diff)
 {
-	let productionMultiplier = 1 + (iron * 0.001);
-	let baseProduction = generators[0].amount * generators[0].multiplier;
+	productionMultiplier = 1 + (iron * 0.001);
+	baseProduction = generators[0].amount * generators[0].multiplier;
 	boostedProduction = baseProduction * productionMultiplier;
 
 	watts += boostedProduction * diff;
@@ -121,5 +124,7 @@ updateGUI()
 
 function debug()
 {
-	console.log("cooucou")
+	console.log("boosted", boostedProduction)
+	console.log("prod Mult", productionMultiplier)
+	console.log("base prod", baseProduction)
 }
