@@ -34,6 +34,8 @@ function resetGame()
     location.reload(); 
 }
 
-window.onload = loadGame() 
+window.onload = function() 
 {
+    loadGame();
+    // Other initialization code if needed
 };
