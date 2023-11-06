@@ -1,59 +1,16 @@
 const optionButton = document.getElementById('optionButton');
 const statsButton = document.getElementById('statsButton');
 const achieveButton = document.getElementById('achieveButton');
-function checkAchieve()
+function showGen()
 {
-	const gens = [50, 1e3, 1e9, 1e16, 1e25, 1e36, 1e49, 1e64, 1e81]
-	gens.forEach(([key, gens]) =>
+	const unlockGens = [50, 1e3, 1e9, 1e16, 1e25, 1e36, 1e49, 1e64, 1e81]
+	unlockGens.forEach((gen, i) =>
 	{
-		if (watts > gens)
+		if (watts > gen)
 		{
-			document.getElementById("gen"+(key+2)).style.display = "block";
+			document.getElementById("gen"+(i+2)).style.display = "block";
 		}
 	});
-
-
-	// if (watts > 50)
-	// {
-	// document.getElementById("gen2").style.display = "block";	
-	// }
-	// if (watts > 1e3)
-	// {
-	// document.getElementById("gen3").style.display = "block";
-	// }
-	// if (watts > 1e9)
-	// {
-	// document.getElementById("gen4").style.display = "block";
-	// }
-	// if (watts > 1e16)
-	// {
-	// document.getElementById("gen5").style.display = "block";
-	// }
-	// if (watts > 1e25)
-	// {
-	// document.getElementById("gen6").style.display = "block";
-	// }
-	// if (watts > 1e36)
-	// {
-	// document.getElementById("gen7").style.display = "block";
-	// }
-	// if (watts > 1e49)
-	// {
-	// document.getElementById("gen8").style.display = "block";
-	// }
-	// if (watts > 1e64)
-	// {
-	// document.getElementById("gen9").style.display = "block";
-	// }
-	// if (watts > 1e81)
-	// {
-	// document.getElementById("gen10").style.display = "block";
-	// }
-
-	if (watts > 12)
-	{
-    document.getElementById("achiev").style.display = "block";
-	} 
 }
 
 function hideAll()

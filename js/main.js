@@ -70,13 +70,13 @@ function updateGUI()
 	for (let i = 0; i < 11; i++)
 	{
 		let u = upgrades[i];
+		// console.log(u);
 		document.getElementById("up" + (i + 1)).innerHTML = u.name + "<br>Cost: " + format(u.cost) + "W" + "<br>" + u.effect;
 		if (u.cost > watts) document.getElementById("up" + (i + 1)).classList.add("locked");
 		else document.getElementById("up" + (i + 1)).classList.remove("locked");
 	}
 
-    checkAchieve();
-	updateHealthText();
+    showGen`1`
 	
 	updateWattsDisplay();
 	// updateIronDisplay();
@@ -119,12 +119,16 @@ function debug()
 }
 
 setInterval(mainLoop, 50)
-
+  
 updateGUI()
 
 function debug()
 {
-	console.log("boosted", boostedProduction)
-	console.log("prod Mult", productionMultiplier)
-	console.log("base prod", baseProduction)
+	console.log(u)
+	// console.log("boosted", boostedProduction)
+	// console.log("prod Mult", productionMultiplier)
+	// console.log("base prod", baseProduction)
 }
+
+
+                              
