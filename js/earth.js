@@ -1,18 +1,18 @@
-let health = 10; 
-let totalHealth = health; 
+let health = 500; 
+let totalHealth = health;
+let clickPower = 100;
 
 function clickEarth() 
 {
-    health--;
-      // Update health bar width
+    health -= clickPower;
+    // Update health bar width
 
     if(health === 0) 
     {
-      health = totalHealth; // Reset
+      // Reset
+      health = totalHealth; 
       // Give reward
-      iron += 1;
-      // ironPrestige();
-      // giveIronOre(1); 
+      ironPrestige();
     }
     updateHealthText();
     let healthPercent = health / totalHealth * 100;

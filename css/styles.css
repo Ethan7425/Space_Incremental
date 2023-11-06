@@ -356,8 +356,11 @@ html, body
 
 .iron-gen-container
 {
-	position: relative;
-	left: 500px;
+	width: 300px;
+	display: flex;
+	position: absolute;
+	left: 20%;
+	top: 20%;
 	color: white;
 	text-align: center;
 	font-size: 1.2em;

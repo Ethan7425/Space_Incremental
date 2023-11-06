@@ -66,16 +66,6 @@ function updateGUI()
         else document.getElementById("gen" + (i + 1)).classList.remove("locked");
     }
 
-	//Display the upgrades
-	// for (let i = 0; i < 11; i++)
-	// {
-	// 	let u = upgrades[i];
-	// 	// console.log(u);
-	// 	document.getElementById("up" + (i + 1)).innerHTML = u.name + "<br>Cost: " + format(u.cost) + "W" + "<br>" + u.effect;
-	// 	if (u.cost > watts) document.getElementById("up" + (i + 1)).classList.add("locked");
-	// 	else document.getElementById("up" + (i + 1)).classList.remove("locked");
-	// }
-
 	for (let i = 0; i < 11; i++) 
 	{
 		let u = upgrades[i];
@@ -86,7 +76,6 @@ function updateGUI()
 			else document.getElementById("up" + (i + 1)).classList.remove("locked");
 		}
 	}
-
 
     showGen`1`
 	

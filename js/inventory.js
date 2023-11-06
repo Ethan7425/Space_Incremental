@@ -1,8 +1,8 @@
 // Get reference to div and Update text 
-const wattsDiv = document.getElementById('watts');
+const wattsDiv = document.getElementById('wattsAmount');
 wattsDiv.innerText = format(watts) + ' Watts'; 
 
-const ironDiv = document.getElementById('iron');
+const ironDiv = document.getElementById('ironAmount');
 ironDiv.innerText = format(iron) +' Iron';
 
 

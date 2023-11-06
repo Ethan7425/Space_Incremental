@@ -24,9 +24,9 @@
 	<div class="inventoryContainer">
 		<div class="inventoryTitle">Inventory</div>
 		<div class="ressourceType" id="electricity">Energy</div>
-		<div class="ressource" id="watts" style="display: block;">Watts</div>
+		<div class="ressource" id="wattsAmount" style="display: block;">Watts</div>
 		<div class="ressourceType" id="earthOres" >Earth Ores</div>
-		<div class="ressource" id="iron">Iron</div>
+		<div class="ressource" id="ironAmount">Iron</div>
 	</div>
 
 	<!-- Main Scene ---------------------------------------------------------------->
@@ -50,7 +50,7 @@
 		</div>
 
 		<div class="earthButton">
-			<p class="test">if HP falls to 0 <br> You'll unlock something <br> In exchange of all your watts <br> Not yet in fact xD</p>
+			<p class="test">if HP falls to 0 <br> You'll unlock something <br> In exchange of all your watts</p>
 			<img src="img/earth.png" alt="button" onclick="clickEarth()" >
 			<div class="health-bar">
 				<div class="health-text"></div>
@@ -59,8 +59,8 @@
 		</div>
 
 		<div class="iron-gen-container">
-			<button class="ironPrestige" onclick="ironPrestige()">Iron Prestige</button>
-			<div id="ironAmount">Iron : 0</div>
+			<!-- <button class="ironPrestige" onclick="ironPrestige()">Iron Prestige</button> -->
+			<div id="iron">Iron : 0</div>
 		</div>
 	</div>
 

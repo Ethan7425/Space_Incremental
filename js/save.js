@@ -37,5 +37,6 @@ function resetGame()
 window.onload = function() 
 {
     loadGame();
+    updateHealthText();
     // Other initialization code if needed
 };
