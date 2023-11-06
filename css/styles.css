@@ -382,11 +382,34 @@ html, body
 
 /*----------------------------- Options ----------------------------------------*/
 
-.save
+.saveContainer
 {
-	position: relative;
+	position :absolute;
+	display: flex;
+	left: 15%;
+}
 
-	color: white;
-	left: 200px;
-	top: 100px;
+.save 
+{
+	margin: 10px;
+	padding: 5px 10px;
+	width: 160px;
+	height: 60px;
+	background-color: var(--midnight-color);
+	box-shadow: 0 0 15px var(--midnight-color);
+	color: var(--lochmara-color);
+	border-radius: 4px;
+	font-size: 18px;
+	border: solid 4px black;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.save:hover
+{
+	transform: scale(1.1);
+	box-shadow: 0 0 10px 2px var(--lochmara-color);
+    border-color: var(--lochmara-color);
 }

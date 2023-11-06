@@ -55,7 +55,6 @@
 			<div class="health-bar">
 				<div class="health-text"></div>
 				<div class="health"></div>
-				<button class="test" onclick="debug()">debug</button>
 			</div>
 		</div>
 
@@ -67,9 +66,12 @@
 
 	<!-- Options Scene ------------------------------------------------------------->
 	<div class="scene" id="option" style="display: none;">
-		<button class="save" onclick="saveGame()">SAVE</button>
-		<button class="save" onclick="loadGame()">LOAD</button>
-		<button class="save" onclick="resetGame()">RESET</button>
+		<div class="saveContainer">
+			<button class="save" onclick="saveGame()">SAVE</button>
+			<button class="save" onclick="loadGame()">LOAD</button>
+			<button class="save" onclick="resetGame()">RESET</button>
+		</div>
+
     </div>
 
 	<!-- Stats Scene ---------------------------------------------------------------->
