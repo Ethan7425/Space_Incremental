@@ -1,4 +1,4 @@
-let health = 500; 
+let health = 250; 
 let totalHealth = health;
 let clickPower = 1;
 

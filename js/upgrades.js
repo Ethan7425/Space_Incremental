@@ -88,21 +88,6 @@ var upgrades =
     },
 ]
 
-// function upgradeHandler(upgradeId) 
-// {
-
-//     const {target, cost} = upgrades.find(u => u.id === upgradeId);
-
-//     if (cost > watts) return;
-//     generators[target - 1].multiplier *= 2;
-//     watts -= cost;
-
-//     upgrades.push(upgradeId);
-//     updateGUI();
-//     // Hide the button after the upgrade
-//     document.getElementById(upgradeId).style.display = 'none';
-// }
-
 function upgradeHandler(upgradeId) 
 {
     const upgrade = upgrades.find(u => u.id === upgradeId);
@@ -123,7 +108,7 @@ function upgradeHandler(upgradeId)
 
 function resetUpgrades() 
 {
-    upgrades = [];
+    upgrades = upgrades;
     const upgradeButtons = document.querySelectorAll('.upgradeButton');
     upgradeButtons.forEach(button => 
     {

@@ -335,7 +335,7 @@ html, body
     transition: all 0.3s;
 }
 
-.generator:not(.locked):hover 
+.upgradeButton:not(.locked):hover 
 {
     box-shadow: 0 0 10px 2px var(--lochmara-color);
     border-color: var(--lochmara-color);
