@@ -9,6 +9,8 @@ function saveGame()
   
     // Save to localStorage
     localStorage.setItem('Interstellar_Incremental_Save', JSON.stringify(saveData));
+	showToast('Game Saved', 3000);
+
 }
 
 

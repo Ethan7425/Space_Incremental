@@ -416,3 +416,35 @@ html, body
 	box-shadow: 0 0 10px 2px var(--lochmara-color);
     border-color: var(--lochmara-color);
 }
+
+/*----------------------------- Toast ----------------------------------------*/
+
+.toast-container 
+{
+	display: flex;
+	flex-direction: column;
+    position: fixed;
+	max-height: 100px;
+    right: 45%;
+    z-index: 1000;
+}
+
+.toast 
+{
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    max-width: 300px;
+    text-align: center;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.toast.show 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
