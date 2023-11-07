@@ -1,6 +1,6 @@
 let health = 500; 
 let totalHealth = health;
-let clickPower = 100;
+let clickPower = 1;
 
 function clickEarth() 
 {
