@@ -42,3 +42,5 @@ window.onload = function()
     updateHealthText();
     // Other initialization code if needed
 };
+
+setInterval(saveGame, 45000);

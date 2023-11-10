@@ -3,7 +3,7 @@ var upgrades =
     {
         id: 'up1',
         name: "First Upgrade",
-        cost: 35,
+        cost: 50,
         effect: "Solar Panel 1 Efficiency x2",
         target: 1,
     },
@@ -19,7 +19,7 @@ var upgrades =
     {
         id: 'up3',
         name: "Third Upgrade",
-        cost: 1e3,
+        cost: 5e5,
         effect: "Solar Panel 3 Efficiency x2",
         target: 3,
     },
@@ -27,7 +27,7 @@ var upgrades =
     {
         id: 'up4',
         name: "Fourth Upgrade",
-        cost: 1e3,
+        cost: 5e10,
         effect: "Solar Panel 4 Efficiency x2",
         target: 4,
     },
@@ -35,7 +35,7 @@ var upgrades =
     {
         id: 'up5',
         name: "Fifth Upgrade",
-        cost: 1e3,
+        cost: 6e17,
         effect: "Solar Panel 5 Efficiency x2",
         target: 5,
     },
@@ -43,7 +43,7 @@ var upgrades =
     {
         id: 'up6',
         name: "Sixth Upgrade",
-        cost: 1e3,
+        cost: 4e26,
         effect: "Solar Panel 6 Efficiency x2",
         target: 6,
     },
@@ -51,7 +51,7 @@ var upgrades =
     {
         id: 'up7',
         name: "Seventh Upgrade",
-        cost: 1e3,
+        cost: 2e37,
         effect: "Solar Panel 7 Efficiency x2",
         target: 7,
     },
@@ -59,7 +59,7 @@ var upgrades =
     {
         id: 'up8',
         name: "Eight Upgrade",
-        cost: 1e3,
+        cost: 8e50,
         effect: "Solar Panel 8 Efficiency x2",
         target: 8,
     },
@@ -67,7 +67,7 @@ var upgrades =
     {
         id: 'up9',
         name: "Ninth Upgrade",
-        cost: 1e3,
+        cost: 3e65,
         effect: "Solar Panel 8 Efficiency x2",
         target: 9,
     },
@@ -75,7 +75,7 @@ var upgrades =
     {
         id: 'up10',
         name: "Tenth Upgrade",
-        cost: 1e3,
+        cost: 1e83,
         effect: "Solar Panel 10 Efficiency x2",
         target: 10,
     },

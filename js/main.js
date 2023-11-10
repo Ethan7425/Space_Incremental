@@ -41,7 +41,6 @@ function ironPrestige()
 		generators[i].amount = 0
 		generators[i].bought = 0
 		generators[i].multiplier = 1
-		// productionMultiplier = 1;
 	}
 	hideAll()
 	resetUpgrades()
