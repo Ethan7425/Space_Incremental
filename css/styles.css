@@ -448,3 +448,21 @@ html, body
     opacity: 1;
     transform: translateY(0);
 }
+
+/*----------------------------- Achievements ----------------------------------------*/
+
+.achievement-container
+{
+	position: absolute;
+	left: 10%;
+	top: 5%;
+	display: flex;
+
+}
+
+.achievement
+{
+	position: absolute;
+	left: 10%;
+	color: whitesmoke;
+}
