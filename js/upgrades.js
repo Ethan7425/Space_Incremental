@@ -82,9 +82,9 @@ var upgrades =
 
     {
         id: 'up11',
-        name: "Test",
-        cost: 1e3,
-        effect: "Test"
+        name: "NIY",
+        cost: 0,
+        effect: "you'll see later"
     },
 ]
 
